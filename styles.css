@@ -1,0 +1,204 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #1a1a2e; /* Темный фон */
+    color: #ffffff; /* Цвет текста */
+    line-height: 1.6;
+    scroll-behavior: smooth; /* Плавная прокрутка */
+    overflow-x: hidden; /* Отключение горизонтальной прокрутки */
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный фон */
+    backdrop-filter: blur(5px); /* Эффект размытия фона */
+    position: fixed; /* Фиксированное положение */
+    width: 100%; /* Ширина на всю страницу */
+    z-index: 1000; /* Положение по оси z */
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #00e0ff; /* Цвет логотипа */
+    text-shadow: 0 0 10px #00e0ff; /* Светящийся эффект */
+}
+
+.nav a {
+    color: #ffffff; /* Цвет навигационных ссылок */
+    text-decoration: none; /* Убираем подчеркивание */
+    margin-left: 20px; /* Отступ между ссылками */
+    transition: color 0.3s; /* Плавный переход цвета */
+}
+
+.nav a:hover {
+    color: #00e0ff; /* Цвет при наведении */
+}
+
+.hero {
+    height: 100vh; /* Высота секции */
+    background: url('images/hero-background.jpg') center/cover no-repeat; /* Фоновое изображение */
+    display: flex; /* Flex-контейнер */
+    align-items: center; /* Вертикальное выравнивание */
+    justify-content: center; /* Горизонтальное выравнивание */
+    position: relative; /* Относительное позиционирование */
+    text-align: center; /* Центрирование текста */
+    color: #ffffff; /* Цвет текста */
+}
+
+.hero-overlay {
+    position: absolute; /* Абсолютное позиционирование */
+    top: 0;
+    left: 0;
+    width: 100%; /* Ширина на всю секцию */
+    height: 100%; /* Высота на всю секцию */
+    background: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
+}
+
+.hero-content {
+    z-index: 2; /* Поверх остальных элементов */
+    animation: slideIn 2s ease-in-out; /* Анимация появления */
+}
+
+.hero-title {
+    font-size: 3.5em; /* Размер заголовка */
+    text-shadow: 0 0 20px #00e0ff; /* Светящийся эффект */
+}
+
+.hero-subtitle {
+    font-size: 1.5em; /* Размер подзаголовка */
+    margin-top: 10px; /* Отступ сверху */
+}
+
+.cta-button {
+    background-color: #00e0ff; /* Цвет кнопки */
+    color: #ffffff; /* Цвет текста на кнопке */
+    padding: 12px 30px; /* Внутренние отступы */
+    border-radius: 30px; /* Скругление углов */
+    text-decoration: none; /* Убираем подчеркивание */
+    font-weight: bold; /* Жирный текст */
+    transition: transform 0.3s, box-shadow 0.3s; /* Плавные переходы */
+    display: inline-block; /* Для правильного отображения кнопки */
+}
+
+.cta-button:hover {
+    transform: translateY(-5px); /* Эффект подъема при наведении */
+    box-shadow: 0 5px 15px rgba(0, 224, 255, 0.6); /* Тень при наведении */
+}
+
+.pulse {
+    animation: pulse 1.5s infinite; /* Пульсирующая анимация */
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(100px); /* Начальная позиция */
+        opacity: 0; /* Начальная прозрачность */
+    }
+    to {
+        transform: translateY(0); /* Конечная позиция */
+        opacity: 1; /* Конечная прозрачность */
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 0 15px #00e0ff; /* Начальное и конечное состояние */
+    }
+    50% {
+        box-shadow: 0 0 30px #00e0ff; /* Среднее состояние */
+    }
+}
+
+.about, .characters, .episodes, .gallery {
+    padding: 80px 40px; /* Внутренние отступы */
+    text-align: center; /* Центрирование текста */
+}
+
+.character-card {
+    background: linear-gradient(145deg, #1e2749, #162136); /* Градиентный фон */
+    border-radius: 15px; /* Скругление углов */
+    padding: 20px; /* Внутренние отступы */
+    text-align: center; /* Центрирование текста */
+    transition: transform 0.3s, box-shadow 0.3s; /* Плавные переходы */
+    overflow: hidden; /* Скрытие лишнего контента */
+    position: relative; /* Относительное позиционирование */
+}
+
+.character-card img {
+    width: 100%; /* Ширина изображения */
+    height: auto; /* Автоматическая высота */
+    border-radius: 10px; /* Скругление углов изображения */
+    object-fit: contain; /* Сохранение пропорций изображения */
+    background: linear-gradient(135deg, #2b2b3c, #1e1e2f); /* Градиентный фон для изображений */
+    padding: 10px; /* Внутренние отступы */
+}
+
+.character-card:hover {
+    transform: translateY(-10px); /* Эффект подъема при наведении */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Тень при наведении */
+}
+
+.episode-item {
+    background: linear-gradient(145deg, #1e2749, #162136); /* Градиентный фон для эпизодов */
+    border-radius: 15px; /* Скругление углов */
+    padding: 20px; /* Внутренние отступы */
+    margin-bottom: 20px; /* Отступ снизу для отделения от следующего эпизода */
+    transition: transform 0.3s, box-shadow 0.3s; /* Плавные переходы */
+}
+
+.episode-item:hover {
+    transform: translateY(-5px); /* Эффект подъема при наведении */
+    box-shadow: 0 5px 15px rgba(0, 224, 255, 0.5); /* Тень при наведении */
+}
+
+.episode-link {
+    color: inherit; /* Унаследовать цвет от родителя */
+    text-decoration: none; /* Убрать подчеркивание */
+}
+
+.episode-title {
+    font-size: 1.8em; /* Размер заголовка эпизода */
+    color: #00e0ff; /* Цвет заголовка эпизода */
+    margin-bottom: 10px; /* Отступ снизу */
+}
+
+.episode-description {
+    font-size: 1em; /* Размер описания эпизода */
+}
+
+.gallery-grid {
+    display: grid; /* Используем grid для галереи */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Автоматическое заполнение колонок */
+    gap: 20px; /* Отступы между изображениями */
+}
+
+.gallery-grid img {
+    width: 100%; /* Ширина изображения */
+    height: auto; /* Автоматическая высота */
+    border-radius: 10px; /* Скругление углов изображения */
+    object-fit: contain; /* Сохранение пропорций изображения */
+    background: linear-gradient(135deg, #2b2b3c, #1e1e2f); /* Градиентный фон для изображений */
+    padding: 5px; /* Внутренние отступы */
+    transition: transform 0.3s; /* Плавный переход */
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05); /* Увеличение изображения при наведении */
+}
+
+.footer {
+    text-align: center; /* Центрирование текста */
+    padding: 20px; /* Внутренние отступы */
+    background-color: rgba(0, 0, 0, 0.8); /* Полупрозрачный фон */
+    color: #888; /* Цвет текста */
+    font-size: 0.9em; /* Размер текста */
+}
